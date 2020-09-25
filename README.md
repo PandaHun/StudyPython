@@ -2,4 +2,4 @@
 Python Study Repo
 
 ---
-## [Python Cookbook](./PythonCookBook)
+## [Python Cookbook](https://github.com/PandaHun/StudyPython/tree/master/PythonCookbook)
