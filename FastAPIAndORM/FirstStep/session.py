@@ -37,7 +37,7 @@ class Session(object, metaclass=Singleton):
     def get_base(self):
         return self.Base
 
-    def get_database(self):
+    def get_engine(self):
         return self.database
 
 

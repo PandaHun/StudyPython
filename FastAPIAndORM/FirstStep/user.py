@@ -1,9 +1,12 @@
 from sqlalchemy import engine
+from sqlalchemy.orm import sessionmaker
 from session import Session
 from sqlalchemy import Column, Integer, String
+from pprint import pprint
+
 
 session = Session()
-DataBase = Session.get_database(session)
+DataBase = Session.get_engine(session)
 Base = Session.get_base(session)
 
 class User(Base):
@@ -20,3 +23,11 @@ class User(Base):
 
 
 Base.metadata.create_all(DataBase)
+
+ed_user = User('Bao')
+orm_session = sessionmaker(bind=DataBase)
+db_session = orm_session()
+db_session.add(ed_user)
+db_session.commit()
+our_users = db_session.query(User).all()
+pprint(our_users)
